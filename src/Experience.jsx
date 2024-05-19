@@ -1,6 +1,5 @@
 import {
   useGLTF,
-  Environment,
   Float,
   PresentationControls,
   ContactShadows,
@@ -9,15 +8,14 @@ import {
 } from "@react-three/drei";
 import Screen from "./Screen";
 import { useState } from "react";
+
 export default function Experience() {
   const computer = useGLTF(
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf"
   );
-  const [hovered, setHovered] = useState(false)
+  const [hovered, setHovered] = useState(false);
   return (
     <>
-      <Environment preset="city" />
-      <color args={["#241a1a"]} attach="background" />
       <PresentationControls
         global
         rotation={[0.13, 0.1, 0]}
@@ -37,7 +35,7 @@ export default function Experience() {
               position={[0, 0.55, -1.15]}
             />
             <primitive object={computer.scene} position-y={-1.2}>
-              <Screen isHovered={setHovered}/>
+              <Screen isHovered={setHovered} />
             </primitive>
 
             <Text

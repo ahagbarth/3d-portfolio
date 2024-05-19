@@ -1,11 +1,14 @@
-import React from 'react'
-import { Html, useProgress } from '@react-three/drei'
+import React from "react";
+import { Html, Loader } from "@react-three/drei";
 
 const LoadingScreen = () => {
-  const { active, progress, errors, item, loaded, total } = useProgress()
   return (
-    <Html center>{progress} % loaded</Html>
-  )
-}
+    <Html center>
+      <Loader
+        dataInterpolation={(p) => `Loading ${p.toFixed(0)}%`}
+      />
+    </Html>
+  );
+};
 
-export default LoadingScreen
+export default LoadingScreen;

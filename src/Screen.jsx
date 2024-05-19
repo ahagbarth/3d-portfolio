@@ -45,10 +45,6 @@ const Screen = ({ isHovered }) => {
         distanceFactor={1.17}
         position={[0, 1.56, -1.4]}
         rotation-x={-0.256}
-        // onClick={() => {
-        //   setClicked(!clicked);
-        //   zoomToView(meshRef);
-        // }}
       >
         <iframe
           src="https://alexhagbarth.vercel.app/"

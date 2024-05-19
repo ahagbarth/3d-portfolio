@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import Experience from "./Experience.jsx";
 import LoadingScreen from "./LoadingScreen.jsx";
 import { Suspense } from "react";
-
+import { Environment } from "@react-three/drei";
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 
 root.render(
@@ -17,7 +17,11 @@ root.render(
       position: [-3, 1.5, 4],
     }}
   >
-    <Suspense fallback={<LoadingScreen/>}>
+    <color args={["#241a1a"]} attach="background" />
+    <Suspense fallback={null}>
+      <Environment preset="city" />
+    </Suspense>
+    <Suspense fallback={<LoadingScreen />}>
       <Experience />
     </Suspense>
   </Canvas>
